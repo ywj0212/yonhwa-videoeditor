@@ -1,0 +1,53 @@
+# Python 바이트코드 및 캐시 파일
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtualenv 가상환경 디렉토리 (프로젝트에 따라 이름이 다를 수 있으니 필요에 따라 추가/수정)
+/bin/
+/lib/
+/include/
+/Scripts/
+
+# 배포/패키징 관련 폴더 및 파일
+build/
+dist/
+*.egg-info/
+
+# PyInstaller 빌드 산출물
+# (PyInstaller 실행 시 생성되는 .spec 파일을 버전 관리하고 싶다면 아래 라인을 주석 처리하세요)
+/build/
+/dist/
+
+# 빌드 시 사용한 키 파일 (.key 확장자)
+*.key
+
+# 설치 로그 및 기타 임시 파일
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 테스트/커버리지 관련 파일 및 폴더
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+
+# Jupyter Notebook 체크포인트
+.ipynb_checkpoints/
+
+# 에디터 및 IDE 관련 설정 파일/폴더
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS에서 생성되는 파일들
+.DS_Store
+Thumbs.db
