@@ -57,5 +57,5 @@ origin=Developer ID Application: JOHN DOE (XXXXXXXXXX)
 
 ### Windows
 ```bash
-user@windows:/ $ pyinstaller Yonhwa\ Video\ Editor Windows.spec
+user@windows:/ $ pyinstaller '.\Yonhwa Video Editor Windows.spec'
 ```
