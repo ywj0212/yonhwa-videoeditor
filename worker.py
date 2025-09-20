@@ -53,7 +53,8 @@ class Worker(QObject):
         bg_clip: ImageClip = ImageClip(self.bg_path).with_duration(duration)
         lp_loop_clip: VideoFileClip = VideoFileClip(lp_loop_path, has_mask=True)
         lp_len: int = int(lp_loop_clip.duration)
-        lp_loop_clip = lp_loop_clip.resized(1.01).with_position((380, 163))
+        # lp_loop_clip = lp_loop_clip.resized(1.01).with_position((380, 163))
+        lp_loop_clip = lp_loop_clip.with_position((771.2, 260))
       
         if duration > lp_len:
           self.finished.emit(f"오류! 플레이리스트 영상 길이는 {lp_len}초를 넘길 수 없음!\r\n현재 요청 영상 길이(Fade In/Out 포함): {duration}")
@@ -87,8 +88,8 @@ class Worker(QObject):
           self.finished.emit("저장 경로에 파일이 이미 존재합니다!\r\n" + output_path)
           return
       
-        if not bg_clip.size == (1080, 1080):
-          self.finished.emit(f"인코딩 중(플레이리스트)... 잠시만 기다려주세요\r\n{bg_clip.size[0]}x{bg_clip.size[1]} 23.976fps, {duration:.2f}초({bgm_from:.2f} - {bgm_to:.2f})\r\n주의: 권장 해상도(1080x1080)와 일치하지 않습니다!")
+        if not bg_clip.size == (1080, 1440):
+          self.finished.emit(f"인코딩 중(플레이리스트)... 잠시만 기다려주세요\r\n{bg_clip.size[0]}x{bg_clip.size[1]} 23.976fps, {duration:.2f}초({bgm_from:.2f} - {bgm_to:.2f})\r\n주의: 권장 해상도(1080x1440)와 일치하지 않습니다!")
         else:
           self.finished.emit(f"인코딩 중(플레이리스트)... 잠시만 기다려주세요\r\n{bg_clip.size[0]}x{bg_clip.size[1]} 23.976fps, {duration:.2f}초({bgm_from:.2f} - {bgm_to:.2f})")
 
@@ -129,8 +130,8 @@ class Worker(QObject):
           self.finished.emit("저장 경로에 파일이 이미 존재합니다!\r\n" + output_path)
           return
         
-        if not bg_clip.size == (1080, 1080):
-          self.finished.emit(f"인코딩 중(일본어 어휘)... 잠시만 기다려주세요\r\n{bg_clip.size[0]}x{bg_clip.size[1]} 23.976fps, {duration:.2f}초({bgm_from:.2f} - {bgm_to:.2f})\r\n주의: 권장 해상도(1080x1080)와 일치하지 않습니다!")
+        if not bg_clip.size == (1080, 1440):
+          self.finished.emit(f"인코딩 중(일본어 어휘)... 잠시만 기다려주세요\r\n{bg_clip.size[0]}x{bg_clip.size[1]} 23.976fps, {duration:.2f}초({bgm_from:.2f} - {bgm_to:.2f})\r\n주의: 권장 해상도(1080x1440)와 일치하지 않습니다!")
         else:
           self.finished.emit(f"인코딩 중(일본어 어휘)... 잠시만 기다려주세요\r\n{bg_clip.size[0]}x{bg_clip.size[1]} 23.976fps, {duration:.2f}초({bgm_from:.2f} - {bgm_to:.2f})")
 
